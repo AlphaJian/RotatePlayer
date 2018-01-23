@@ -117,14 +117,15 @@ class PlayerViewController: UIViewController {
                         self.view.transform = CGAffineTransform.identity
                         self.view.frame = self.oldFrame!
                     })
-                    break
+                    UIApplication.shared.setStatusBarOrientation(UIInterfaceOrientation.portrait, animated: true)
                 case .Full:
                         self.oldFrame = self.view.frame
                         UIView.animate(withDuration: 0.5, animations: {
                             self.view.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
                             self.view.frame = UIScreen.main.bounds
                         })
-                    break
+
+                    UIApplication.shared.setStatusBarOrientation(UIInterfaceOrientation.landscapeRight, animated: true)
                 }
             }
             
